@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<script type="text/javascript">
+	// 	1)字符串但双引号都可以，但是要采用一致的风格
+	//  2)在单引号(双引号)中使用单引号（双引号）要转义，但是
+	//    在单引号（双引号）中使用双引号（单引号）则不需要转义
+    //  3)记住常用的转义字符：\t,\r,\n,\",\'
+    var msg = "This is Javascript";
+    var words = msg.split(" ");
+    console.log("包含"+words.length+"个单词");
+    var na = "春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。";
+    // 统计有几个汉字
+    //words = na.split("");
+    // var len = 0;
+    // for(var i in na){
+    // 	if(na[i]!='，' && na[i] != '。')
+    // 		len++;
+    // }
+    // console.log(len);
+    na = na.replace(/，|。/g,"");
+    console.log(na.length);
+
+    var obj; // 非NaN、null、undefined、0、-0、""都是true
+    if(obj){
+    	console.log("true");
+    }
+
+    // 查询Date对象有没有xxx方法
+    var date = new Date();
+    if(date.xxx != undefined){
+    	date.xxx();
+    }else{
+    	console.log("没有xxx方法");
+    }
+
+    // 在函数内部没有添加var的变量是全局的，使用var定义的变量是局部的
+    // 局部变量在函数内部一直有效，在函数外部无法方法
+    function abc(){
+    	//console.log(typeof num2);
+    	if(typeof(num2)=='undefined') num2 = 1;
+    	num2++;
+    	console.log(num2);
+    }
+    abc();
+    abc();
+    abc();
+
+    var str = "abc";//new String("abc");
+    //console.log(str.charAt(1));  // 字符串的创建和销毁
+    str.xxx = 10;// 1、创建对象(假定是tmp)new String("abc"); 2、tmp.xxx=10;  3、销毁tmp
+    console.log(str.xxx);
+
+    var str1 = new String("abc");
+    str1.xxx = 10;
+    console.log(str1.xxx);
+
+    var num = 10;
+
+    var ss = "abc";
+    ss = ss + "123";  // 临时字符串 abc123
+
+    ss = ss.substring(3);  // ss='abc123';
+
+    console.log(ss[0]);
+    ss[0]='a';
+	console.log(ss[0]);
+
+	var p1 = {name:'张三',age:20,address:'洛阳'};
+	var p2 = {name:'张三',age:20,address:'洛阳'};
+	var p3 = p1;
+	console.log(p1==p2);
+	console.log(p3==p1);
+
+	if(p1.name == p2.name && p1.age == p2.age && p1.address == p2.address){
+		console.log("p1等于p2");
+	}
+
+</script>
+</body>
+</html>

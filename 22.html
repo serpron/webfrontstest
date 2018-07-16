@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var student = {
+		name : '张三',   // 数据属性
+		get age(){
+			return this._age;
+		},
+		set age(newVal){
+			if(newVal>=0 && newVal<=120)
+				this._age = newVal;
+			else
+				this._age = 20;
+		}
+	};
+	student.age = -10;    // 存值
+	console.log(student.age);  // 取值
+	// property属性，field字段，attribute特性
+	console.log(Object.getOwnPropertyDescriptor(student,"name"));
+	console.log(Object.getOwnPropertyDescriptor(student,"age"));
+	console.log(Object.getOwnPropertyDescriptor(window,"name"));
+	Object.defineProperty(student,"name",{
+		value:'固定',
+		writable:false,  		// 属性是只读的
+		enumerable:false,
+		configurable:true
+	});
+	student.name = "123";
+	console.log(student.name);
+	console.log(Object.getOwnPropertyDescriptor(student,"name"));
+</script>
+</body>
+</html>

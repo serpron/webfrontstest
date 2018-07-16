@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	// typeof用来判断一个变量、函数、对象、数组的数据类型
+	var obj = ["122",10,20];
+	console.log(typeof obj);
+	var str = "122222";
+	console.log(typeof(str));
+	function test(){}
+	console.log(typeof test); 
+	var names = ["张三","李四"];
+	for(var i=0;i<names.length;i++){
+		console.log(names[i]);
+	}
+	// foreach循环，增强的for..in循环
+	// names可以写数组、字符串、对象
+	for(var i in names){
+		console.log(names[i]);
+	}
+	for(var i in str){
+		console.log(str[i]);
+	}
+	var p = {name:'张三',age:10};
+	for(var i in p){
+		console.log(i+","+p[i]);  // p["name"],p["age"]
+	}
+
+	with(p){
+		console.log(name);
+	}
+
+	with(document.body.style){
+		background = "#ccc";
+		fontSize="30px";
+		color="red";
+	}
+
+	try{
+		throw {name:"错误............."};
+	}catch(e){
+		console.log(e)
+	}
+
+</script>
+<p>ddddddddddddddddddddddd</p>
+</body>
+</html>

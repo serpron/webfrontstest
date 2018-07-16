@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="cacl.css"/>
+	<script type="text/javascript" src="cacl.js"></script>
+</head>
+<body>
+<!--HTML（功能）、css（外观）、js（特效）、java（动态内容）-->
+	<div class="cacl">
+		<div><input type="text" id="input" onkeydown="input();" readonly="readonly" /></div>
+		<div>
+			<div>
+				<button onclick="backspaceNum();">←</button>
+				<button onclick="resetNum2();">CE</button>
+				<button onclick="resetCacl();">C</button>
+				<button>±</button>
+			</div>
+			<div>
+				<button onclick="inputNum(7)">7</button>
+				<button onclick="inputNum(8)">8</button>
+				<button onclick="inputNum(9)">9</button>
+				<button onclick="operation('/');">/</button>				
+			</div>
+			<div>
+				<button onclick="inputNum(4)">4</button>
+				<button onclick="inputNum(5)">5</button>
+				<button onclick="inputNum(6)">6</button>
+				<button onclick="operation('*');">*</button>				
+			</div>
+			<div>
+				<button onclick="inputNum(1)">1</button>
+				<button onclick="inputNum(2)">2</button>
+				<button onclick="inputNum(3)">3</button>
+				<button onclick="operation('-');">-</button>				
+			</div>
+			<div>
+				<button onclick="inputNum(0)">0</button>
+				<button onclick="inputNum('.')">.</button>
+				<button onclick="operation('+');">+</button>
+				<button onclick="cacl();">=</button>				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

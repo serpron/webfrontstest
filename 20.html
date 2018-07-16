@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	var stocks = {};  // 股票购买份额
+	var prices = {};  // 股票的价格
+	function addStock(name,count,price){
+		stocks[name] = count;
+		prices[name] = price;
+	}
+	addStock("万科A",200,32.8);
+	addStock("神州高铁",1000,6.71);
+	// 统计总共花了多少钱
+	var total = 0;
+	for(var name in stocks){
+		total += stocks[name] * prices[name];
+	}
+	console.log(total);
+
+</script>
+</body>
+</html>

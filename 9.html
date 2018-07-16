@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var scope = "Global";      // 不在任何函数内部的变量叫全局变量
+	var scope = "Gblob";
+	console.log(scope);
+	function checkscope(){
+		var scope = "Local";   // 局部变量，遮盖全部变量scope
+		console.log(scope);
+	}
+	checkscope();
+	function checkscope1(){
+		scope = "Local1111";   // 给全局变量赋值，修改了全局变量
+		console.log(scope);
+	}	
+	checkscope1();
+	console.log(scope);  
+	var o = {};
+	o[1] = "one";
+	console.log(o);    
+	var arr = [];
+	arr[3]=1;
+	console.log(arr.length);   
+</script>
+</body>
+</html>

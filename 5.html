@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div{transition:all 2s;}  /*过渡、变幻、动画*/
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		for(var i=0;i<100;i++){
+			var x = Math.random()*1000+1;
+			x = Math.round(x);
+			var y = Math.round(Math.random()*1000+1);
+			// 在浏览器动态生成内容
+			//document.write('');
+			document.write('<div style="position:absolute;border:1px solid red;top:'+x+'px;left:'+y+'px;">'+x+'-'+y+'</div>');
+		}
+		// 定时器,100毫秒执行一段代码
+		setInterval(function(){
+			var divs = document.getElementsByTagName("div");
+			for(var i in divs){
+				var div = divs[i];
+				var dl = Math.round(Math.random()*100+1);
+				dl = dl%2==0 ? -dl : dl;
+				with(div.style){
+					top = (dl+parseInt(top))+"px";
+					left = (dl+parseInt(left))+"px";
+				}
+			}
+		},1000);
+
+		// 编写4函数，完成加减乘除
+		function add(n1,n2){
+			// 判断n1和n2都是数字
+			// 判断如果调用函数时传递参数不够，报错
+		}
+		function divide(n1,n2){
+			// 除数不能为0，为0，报错
+		}
+	</script>
+</body>
+</html>

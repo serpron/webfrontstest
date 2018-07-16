@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+var msg = "var ddd = \"123\";console.log(ddd);";
+console.log(msg);
+eval(msg);
+console.log(ddd);  // 可以正常输出
+
+function abc(){
+	var msg = "var xxx = \"123\";console.log(xxx);";
+	console.log(msg);
+	eval(msg);
+}
+
+abc();
+
+//console.log(xxx);  // 访问不到的
+
+var xx = [10,9,-1,-2,-99,45];
+for(var i in xx){
+	console.log(xx[i] > 0 ? xx[i] : -xx[i]);
+	if(xx[i]>0)
+		console.log(xx[i]);
+	else
+		console.log(-xx[i]);
+}
+
+</script>
+<a href="javascript:void(0)" onclick="console.log(1);">跳转</a>
+</body>
+</html>

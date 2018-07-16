@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="">
+<script type="text/javascript">
+	
+	// 定义一个匿名函数，同时执行，意图定义一个执行环境， 避免污染全局变量
+	(function(){
+		var name = "abc";  // 局部name
+		console.log(name);  
+	})();
+
+	console.log(name);  // 访问全局name的
+
+	var p = {name:"abc",age:10};
+	for(var key in p){
+		console.log(key + '=' + p[key]);
+		//throw {msg:'随便写的'};
+	}
+
+	with(document.body.style){
+		background="#eee";
+		fontSize="30px";
+	}
+
+	var p1 = {name:'abc'};
+	var p2 = p1;   // 引用，没有copy对象
+	p2.name = 'xxx';
+	console.log(p1.name);
+
+	console.log(p1);
+	console.log(p1.class);
+
+	var nums = [];
+	
+	// 基本类型是值类型
+	var n1 = 10;
+	var n2 = n1;  // copy
+	n2 = 20;
+	console.log(n1);
+
+
+
+</script>
+</body>
+</html>

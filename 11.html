@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function checkscope(){
+		console.log(scope);   // ? undefined  java(X)
+		var scope = "Local";  // 局部变量
+		console.log(scope);   // Local
+	}
+	checkscope();
+</script>
+</body>
+</html>

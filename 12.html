@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	// js,java/c/c#/ 词法（静态）、调用（运行时）Lisp
+	function func1(){             // 作用域链:func2->func1->全局
+		var f1 = "func1";         // 局部变量
+		console.log(f1);          // func1
+		function func2(){
+			//var f1 = "func2";     // 局部变量
+			var f2 = "func2";
+			console.log(f2);
+			console.log(f1);      // func2
+		}
+		func2();
+	}
+	func1();   // func2
+
+</script>
+</body>
+</html>

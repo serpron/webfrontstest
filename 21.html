@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var o = {};   
+	o.x = 2;
+	var p = Object.create(o);
+	p.y = 3;
+	var q = Object.create(p);
+	q.z = 4;
+	var s = q.toString();
+	//console.log(q);
+	q.z = 10;  // 修改的是自身
+	q.y = 20;  // 给自己新增一个属性y，值为20，原型上的y不变
+	console.log(q.hasOwnProperty('z'));
+	console.log(q.propertyIsEnumerable('z'));  // 是否可枚举
+	console.log("getElementsByTagName" in document);
+
+	console.log(document.propertyIsEnumerable("getElementsByTagName"));
+	console.log(document.hasOwnProperty("getElementsByTagName"));
+	 for(var k in document){
+	 	console.log(k);
+	 }
+
+	 封装、继承、多态
+
+	 封装：对象的属性私有，使用存取器(set/get)进行访问
+	 继承：子类从父类中继承属性和方法，继承的主要目的是为了提高代码的可重用性
+
+</script>
+</body>
+</html>

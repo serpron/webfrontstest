@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var obj = {       // 全局变量
+		name:'张三',
+		age:20,
+		score:[
+			{"语文":90},
+			{"数学":100}
+		],
+		show:function(){
+			alert(1);
+		}
+	};
+	console.log(window);
+	console.log(name);
+	console.log(obj[name]);  // 访问未定义的变量ReferenceError 已定义未赋值undefined
+	//console.log(obj[xxx]);  // name?
+
+	// var show1 = "show";
+	// if(obj.show1){
+	// 	obj.show1();
+	// }
+	// if(obj[show1]){   // []运算符可以解析变量，.运算符不行
+	// 	obj[show1]();
+	// }
+
+	var date = new Date();   // 创建一个日期对象，Date()就是构造方法调用
+
+	// 构造函数
+	function Person(str){
+		this.name = str;
+		this.show =function(){
+			alert(this.name);
+		};
+	}
+	var p1 = new Person('xxx');  // 把Person函数作为构造函数调用
+	var p2 = {
+		name:'xxx',
+		show:function(){
+			alert(this.name);
+		}
+	};
+	// 1) 创建一个空对象{}
+	// 2) this={},
+	// 3) this.name = str;  {name:'abc'}
+	// 4) this.show = function(){alert(this.name);};
+	//    {name:'xxx',show:function(){alert(this.name);}};
+	// 5) p1 =  {name:'xxx',show:function(){alert(this.name);}};
+	//console.log(p1.name);
+	//p1.show();
+
+	var dd = 1+2-1;  // 结合性
+
+	var i = 0;
+	console.log(i);
+
+	//左值：可以出现在赋值运算符的左边，常见的左值：变量、对象属性、///数组元素，要求左值的运算符有：++、--、=/+=/-=
+
+	var obj1;
+	 // &&左结合短路执行
+	if(obj1 && (console.log('执行'))){ 
+		console.log("111");
+	}
+
+	// 表达式1 ？表达式2：表达式3，如果表达式1为true，则整个表达式的值是表达式2，否则整个表达式的值为表示3
+	var ddd = obj.name1 ? obj.name1 : "无";
+	console.log(ddd);
+	var ddd1 = obj.name1 ? obj.name1 : obj.name ? "有":'没有';
+	console.log(ddd1);
+	if(obj.name1){
+		console.log(obj.name1);
+	}else{
+		if(obj.name){
+			console.log('有');
+		}else{
+			console.log('没有');
+		}
+	}
+
+	var n1 = "1";
+	var n2 = 1;
+	if(n1==n2){  // ==自动进行数据类型的转换
+		console.log('相等');
+	}
+	if(n1===n2){
+		console.log('等');
+	}else{
+		console.log('不等');
+	}
+
+	var j = 0;
+	j = j++ + ++j; // j=(j++) + (++j);
+	j = j++ + ++j; // j=(j++) + (++j);
+	               // j= 2(j=3) + 4(j=4) = 6
+	j = --j + ++j; // j= 5(j=5) + 6(j=6) = 11
+	console.log(j);
+
+	var nums = {
+				"张三":{id:'123',email:'xxx@sss.com',qq:'111121'},
+				"李四":{},
+				"王五":{},
+				"悟空":{},
+				"八戒":{}
+			   };
+	if('八戒' in nums){
+		console.log('是');
+	}else{
+		console.log('不是');
+	}
+
+	for(var key in window){
+		document.write('<li>'+key+'['+window[key]+']</li>')
+	}
+
+</script>
+</body>
+</html>

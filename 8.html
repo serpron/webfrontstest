@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	// var n1 = 1+Number("2");
+	// console.log(n1);
+	// var arr = [];
+	// var flag = Boolean(arr);
+	// var num1 = 10;
+	// num1 = num1 + "";
+	// var name = "122";
+	// name = 1 + +name;  // 1+parseInt(name); 1+Number(name);
+	// console.log(name);
+	// // null undifined 0 -0 "" == false
+	// var date = null;
+	// if(!!date){
+	// //if(date){
+	// 	console.log("null");
+	// }
+	// var tt = !!date;  // 将date强制转换为布尔类型
+	// console.log(typeof tt);
+	// console.log(typeof date);
+
+	// 将一个字符串转换为数字
+	// 1) +字符串
+	// 2) Number(字符串)
+	// 3) parseInt(字符串)
+	// 将数字转换为16进制形式的字符串
+	// var n = 0xFF6633;
+	// console.log(n.toString(16));
+	// console.log(n.toString(10));
+	// console.log(n.toString(8));
+	// console.log(n.toString(2));
+
+	// 汉字的unicode编码查看器
+	// 思路1：去取第二字节转化为16进制，再取出第一个字节转换为16进制
+	// 思路2：通过字符串操作，交换16进制字符串的顺序
+	var na = "中国";  // UTF16  4e2d 56fd
+	//192.168.137.71
+	function charCode(str){
+		var result = "";
+		for(var i in str){
+			var n1 = str.charCodeAt(i);
+			var ss = n1.toString(16);
+			var ss = ss[2]+ss[3]+ss[0]+ss[1];	
+			result += ss +" ";		
+		}
+		return result;
+	}
+	// 交换后
+	function charCode2(str){
+		var result = "";
+		for(var i in str){
+			var n1 = str.charCodeAt(i);
+			n1 = ((n1 & 0x00FF)<<8 ) | (n1 >> 8);  // 交换前后两个字节
+			var ss = n1.toString(16);
+			result += ss +" ";		
+		}
+		return result;		
+	}
+    // 原始字节序输出
+	function charSrc(str){
+		var result = "";
+		for(var i in str){
+			var n1 = str.charCodeAt(i);
+			var ss = n1.toString(16);
+			result += ss +" ";		
+		}
+		return result;		
+	}
+	console.log(charSrc(na));
+	console.log(charCode2(na));
+	// n1 = 0x2d4e;  // 2d4e  4e00  2d4e & 0xFF= 004e << 8 = 4e00
+	// var nn1 = (n1 & 0x00FF) << 8;  // 4e00
+	// console.log(nn1.toString(16));
+	// var nn2 = n1 >> 8;             // 002d
+	// console.log(nn2.toString(16));
+	// nn1 = nn1 | nn2;               // 4e2d
+	// console.log(nn1.toString(16));
+
+	var num = 123456789;
+	// 顶一个函数
+	/**
+		取出position位置的二进制值（0、1）
+		@param num 为任意数字
+		@param position 为数字的位置
+		比如：十进制数num=123456789的二进制形式为111010110111100110100010101，如果position为10的话，
+												 00000000000000000x000000000
+		则函数的返回值应该为0
+	*/
+	function checkFlag(num,positon){
+		
+	}
+
+</script>
+</body>
+</html>

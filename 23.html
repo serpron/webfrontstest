@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	var student = {
+		name : '张三',   // 数据属性
+		age : 20,
+		address:'洛阳'
+	};	
+	// 将对象转字符串，支付宝在线支付，
+	var msg = JSON.stringify(student);
+	console.log(msg);
+	console.log(student);
+	var s1 = JSON.parse(msg);  // 字符串转对象
+	console.log(s1);
+
+</script>
+</body>
+</html>

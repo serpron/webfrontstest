@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	// var num = 1/0;
+	// console.log(num);
+	// console.log(num +1== Infinity);
+	// console.log(isFinite(num));  // isFinite是否是非无穷大
+
+
+	// var nu = "abc";
+	// nu = parseInt(nu);
+	// console.log(nu);
+	// console.log(nu==NaN);
+	// console.log(isNaN(nu));
+
+	// console.log(Number.MAX_VALUE);
+	// console.log(Number.MIN_VALUE);
+
+	function getTime(){
+		var time = new Date();  // 构建日期对象，获取当前系统时间
+		var year = time.getFullYear();  // 年
+		var month = time.getMonth();   // 月
+		var date = time.getDate();      // 日
+		var hour = time.getHours();     // 时
+		var minute = time.getMinutes(); // 分
+		var second = time.getSeconds(); // 秒
+		// yyyy-MM-dd HH:mm:ss
+		var msg = year + "-" + (month+1) + "-" + date +
+                  " " + hour + ":" + minute +":" + second;
+        // 选择所有的h1标签
+        var h1s = document.getElementsByTagName("h1");
+        h1s[0].innerHTML = msg;  // 修改h1标签的内容
+
+	}
+	setInterval(function(){getTime();},1000);
+</script>
+<h1></h1>
+</body>
+</html>
